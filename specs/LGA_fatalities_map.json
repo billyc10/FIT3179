@@ -5,7 +5,7 @@
   "title": "Total Deaths",
   "projection": {"type": "equirectangular"},
   "data": {
-    "url": "../data/vic_lga_topojson.json",
+    "url": "https://billyc10.github.io/FIT3179/data/vic_lga_topojson.json",
     "format": {
       "type": "topojson",
       "feature": "vic_lga"
@@ -15,7 +15,7 @@
     "lookup": "properties.vic_lga__3",
     "from": {
       "data": {
-        "url": "../data/fatal_crashes_vic_lga_count.csv"
+        "url": "https://billyc10.github.io/FIT3179/data/fatal_crashes_vic_lga_count.csv"
       },
       "key": "LGA_NAME",
       "fields": ["FATALITIES"]
