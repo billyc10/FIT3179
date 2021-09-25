@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 500,
+    "title": "Deaths Per 100,000 Residents",
+    "projection": {"type": "equirectangular"},
+    "data": {
+      "url": "../data/vic_lga_topojson.json",
+      "format": {
+        "type": "topojson",
+        "feature": "vic_lga"
+      }
+    },
+    "transform": [{
+      "lookup": "properties.vic_lga__3",
+      "from": {
+        "data": {
+          "url": "../data/fatal_crashes_vic_lga_count.csv"
+        },
+        "key": "LGA_NAME",
+        "fields": ["FATALITIES"]
+      }
+    },
+    {
+      "lookup": "properties.vic_lga__3",
+      "from": {
+        "data": {
+          "url": "../data/vic_lga_population.csv"
+        },
+        "key": "LGA_name",
+        "fields" : ["Population"]
+      }
+    },
+    {
+      "calculate": "datum.FATALITIES/datum.Population * 100000",
+      "as": "Deaths per 100,000"
+    }
+    ],
+    "mark": {
+        "type": "geoshape"
+    },
+    "encoding": {
+        "color": {
+            "field": "Deaths per 100,000",
+            "type": "quantitative",
+            "legend": {
+              "titleFontSize": 12,
+              "labelFontSize": 11
+            },
+            "title": [
+              "Road fatalities per","100,000 residents"
+            ],
+            "scale": {
+              "type": "threshold",
+              "domain": [35, 70, 110, 145],
+              "range": ["#fee5d9","#fcbba1","#fb6a4a","#cb181d","#99000d"]
+            }
+        },
+        "tooltip": [
+            {"field": "properties.vic_lga__3", "type": "nominal", "title": "Region"},
+            {"field": "Deaths per 100,000", "type": "quantitative", "title": "Deaths per 100,000 residents", "format": ".0f"}
+        ]
+    },
+    "config": {
+      "title": {
+        "fontSize": 20,
+        "fontWeight": 600
+      }
+    }
+  }
