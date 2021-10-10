@@ -9,7 +9,7 @@
     "layer": [
         {
             "data": {
-                "url": "/data/vic_lga_topojson.json",
+                "url": "https://billyc10.github.io/FIT3179/data/vic_lga_topojson.json",
                 "format": {
                   "type": "topojson",
                   "feature": "vic_lga"
@@ -23,7 +23,7 @@
         },
         {
             "data": {
-                "url": "/data/fatal_crashes_vic.csv"
+                "url": "https://billyc10.github.io/FIT3179/data/fatal_crashes_vic.csv"
             },
             "transform": [
                 {
