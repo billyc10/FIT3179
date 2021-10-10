@@ -21,11 +21,18 @@
 </head>
 <body>
     <h1>Victorian Road Toll: Lives Lost 2015 - 2020</h1>
-    <div id="fatalitiesMap"></div>
+    <div class="map" id="fatalitiesDotMap"></div>
+    <div class="map" id="fatalitiesMap"></div>
 
     <script>
-        var spec = "specs/LGA_fatalities_map_normalised.json";
-        vegaEmbed('#fatalitiesMap', spec).then(function(result) {
+        var spec1 = "specs/fatalities_dot_map.json";
+        var spec2 = "specs/LGA_fatalities_map_normalised.json";
+        
+        vegaEmbed('#fatalitiesDotMap', spec1).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#fatalitiesMap', spec2).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
     </script>

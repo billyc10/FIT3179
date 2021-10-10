@@ -7,9 +7,12 @@ h1 {
 }
 
 body {
-    text-align: center
+    text-align: center;
+    display: flex;
+    flex-direction: column
 }
 
-#fatalitiesMap {
-    padding-left: 15%
+.map {
+    padding-left: 10%;
+    margin: 50px
 }

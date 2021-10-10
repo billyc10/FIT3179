@@ -1,0 +1,80 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 400,
+    "title": "Road Fatalities",
+    "projection": {
+        "type": "equirectangular"
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "/data/vic_lga_topojson.json",
+                "format": {
+                  "type": "topojson",
+                  "feature": "vic_lga"
+                }
+              },
+              "mark": {
+                  "type": "geoshape",
+                  "fill": "#f7f7f7",
+                  "stroke": "#bdbdbd"
+              }
+        },
+        {
+            "data": {
+                "url": "/data/fatal_crashes_vic.csv"
+            },
+            "transform": [
+                {
+                    "calculate": "datum.RD_U_DESC", "as": "Accident Type"
+                }
+            ],
+            "selection": {
+                "accident_type_highlight": {
+                    "type": "multi",
+                    "fields": ["Accident Type"],
+                    "bind": "legend"
+                }
+            },
+            "mark": {
+                "type": "circle"
+            },
+            "encoding": {
+                "longitude": {"field": "LONGITUDE", "type": "quantitative"},
+                "latitude": {"field": "LATITUDE", "type": "quantitative"},
+                "size": {"value": 15},
+                "color": {
+                    "field": "Accident Type",
+                    "type": "nominal",
+                    "scale": {"range": ["#996633","#1f78b4", "#33a02c","#fb9a99","#e31a1c", "#9933ff"]}
+                },
+                "opacity": {
+                    "condition": {"selection": "accident_type_highlight", "value": 1},
+                    "value": 0.05
+                },
+                "tooltip": [
+                    {
+                        "field": "Accident Type", "type": "nominal", "title": "Victim"
+                    },
+                    {
+                        "field": "AGE", "type": "ordinal", "title": "Deceased Age"
+                    },
+                    {
+                        "field": "ACC_T_DESC", "type": "nominal", "title": "Accident Type"
+                    },
+                    {
+                        "field": "NO_VEHICLE", "type": "ordinal", "title": "Number of vehicles"
+                    }
+                ]
+            }
+
+        }
+    ],
+    "config": {
+        "title": {
+          "fontSize": 20,
+          "fontWeight": 600
+        }
+    }
+}
