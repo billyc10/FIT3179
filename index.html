@@ -20,21 +20,82 @@
     </style>
 </head>
 <body>
-    <h1>Victorian Road Toll: Lives Lost 2015 - 2020</h1>
-    <div class="map" id="fatalitiesDotMap"></div>
-    <div class="map" id="fatalitiesMap"></div>
+    <div class="main">
+        <h1>Victorian Road Accidents - The Last 5 Years</h1>
+        
+        <div class="vertical">
+            <div class="horizontal" style="margin-bottom:20px">
+                <div class="vertical" style="width:20%">
+                    <div class="text heading large"> 
+                        75,320
+                    </div>
+                    <div class="text medium">accidents</div>
+                </div>
+                
+                <div class="vertical" style="width:20%">
+                    <div class="text heading large" style="color:#cb181d">
+                        1,264
+                    </div>
+                    <div class="text medium">lives lost</div>
+                </div>
+            </div>
+            <div class="text small" style>from July 2015 - June 2020 on Victorian roads</div>
+
+            <div class="section text small paragraph box">
+                Every year thousands of accidents occur on our roads, and hundreds lost their lives to tragic accidents.
+                In this series of visualisations we have a look into the statistics behind road accidents.
+            </div>
+        </div>
+
+        <div class="section map" id="fatalitiesDotMap"></div>
+
+        <div class="subsection text small paragraph box">
+            As expected, the majority of road fatalities occur in densely populated areas around metropolitan Melbourne.
+            This is true especially for pedestrian and cyclist fatalities, as urban regions tend to have a greater density of foot and cyclist traffic.
+            However, the map of fatal crashes below (normalised per 10,000 residents) reveals a somehwat surprising statistic:
+        </div>
+
+        <div class="subsection map" id="fatalitiesMap"></div>
+
+        <div class="subsection text small paragraph box">
+            When we look at fatalities normalised by population, metropolitan Melbourne actually has the lowest road fatality rate.
+            Rural areas actually tend to be the more dangerous areas to drive in. This is likely due to the fact that despite its dense population,
+            Metro Melbourne has many built-up roads, with traffic lights and low speeds. Rural highways tend to have higher road speeds, narrower lanes, and
+            longer distances to travel that lead to fatigue.
+        </div>
+
+        <div class="section horizontal">
+            <div class="vis" id="fatalitiesYears" style="width:40%"></div>
+            <div class="halfbox" style="width:40%">
+                <div class="text small paragraph halfbox">
+                    Victoria's road toll had been on the decrease for 3 years in a row, hitting a record low of 159 in 2018 before spiking back up in 2019.
+                    Despite COVID-19 causing state-wide lockdowns for a majority of 2020, the total lives lost on our roads did not drop drastically.
+                </div>
+            </div>
+        </div>
+
+        <div class="section horizontal">
+            <div class="halfbox" style="width:20%;margin:0 2% 0 4%">
+                <div class="text small paragraph halfbox">
+                    The most fatal accidents occur at evening peak hour, between 3pm - 5pm. However, a significant portion of fatalities still occur after dark.
+                    Although the roads are quiter, visibility is lower and hooning behaviour is more rampant.
+                </div>
+            </div>
+            <div class="vis" id="fatalitiesTime" style="width:60%"></div>
+        </div>
+    </div>
+    
 
     <script>
         var spec1 = "specs/fatalities_dot_map.json";
         var spec2 = "specs/LGA_fatalities_map_normalised.json";
+        var spec3 = "specs/fatalities_over_time.json";
+        var spec4 = "specs/fatalities_time_of_day.json";
         
-        vegaEmbed('#fatalitiesDotMap', spec1).then(function(result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-
-        vegaEmbed('#fatalitiesMap', spec2).then(function(result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+        vegaEmbed('#fatalitiesDotMap', spec1).then(function(result) {}).catch(console.error);
+        vegaEmbed('#fatalitiesMap', spec2).then(function(result) {}).catch(console.error);
+        vegaEmbed('#fatalitiesYears', spec3).then(function(result) {}).catch(console.error);
+        vegaEmbed('#fatalitiesTime', spec4).then(function(result) {}).catch(console.error);
     </script>
 </body>
 </html>

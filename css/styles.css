@@ -1,18 +1,85 @@
 body {
-    font-family: Arial, Helvetica, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color:#4e4a4c;
+    margin: 0px;
 }
 
 h1 {
-    text-align: center
+    text-align: center;
+    font-size: 36px;
+    margin-top: 4%;
+    margin-bottom: 6%;
 }
 
-body {
-    text-align: center;
+.main {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    justify-content: center;
+    width: 1000px;
+    background-color: white;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .map {
     padding-left: 10%;
-    margin: 50px
+    width: 100%;
+}
+
+.text {
+    text-align: center
+}
+
+.text.heading {
+    font-weight: bold;
+}
+
+.text.small {
+    font-size: 16px;
+}
+
+.text.normal {
+    font-size: 20px;
+}
+
+.text.medium {
+    font-size: 24px;
+}
+
+.text.large {
+    font-size: 32px;
+}
+
+.text.paragraph {
+    text-align: justify;
+}
+
+.section {
+    margin-top: 6%;
+}
+
+.subsection {
+    margin-top: 3%;
+}
+
+.box {
+    padding: 0% 10% 0% 10%;
+}
+
+.halfbox {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }

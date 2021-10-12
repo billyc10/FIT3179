@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 700,
-    "height": 400,
+    "height": 500,
     "title": "Road Fatalities",
     "projection": {
         "type": "equirectangular"
@@ -47,7 +47,7 @@
                 "color": {
                     "field": "Accident Type",
                     "type": "nominal",
-                    "scale": {"range": ["#996633","#1f78b4", "#33a02c","#fb9a99","#e31a1c", "#9933ff"]}
+                    "scale": {"range": ["#9933ff", "#e31a1c", "#fb9a99", "#33a02c", "#1f78b4", "#996633"]}
                 },
                 "opacity": {
                     "condition": {"selection": "accident_type_highlight", "value": 1},

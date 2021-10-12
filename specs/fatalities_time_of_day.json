@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 300,
+    "width": 500,
+    "title": "Fatalities Across The Day",
+    "data": {"url": "../data/fatal_crashes_vic.csv"},
+    "encoding": {
+        "x": {
+            "field": "TIME",
+            "type": "ordinal",
+            "title": "Hour (24h time)",
+            "axis": {"titleFontSize": 14, "labelFontSize": 12},
+            "sort": [
+                "0:00", "1:00", "2:00", "3:00","4:00", "5:00", "6:00",
+                "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00",
+                "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00",
+                "21:00", "22:00", "23:00"
+            ]
+        },
+        "y": {
+            "aggregate":"count",
+            "title": "Fatal accidents",
+            "axis": {"titleFontSize": 14, "labelFontSize": 12}
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "color": "#db646f"
+              },
+              "encoding": {
+                "x": {
+                    "field": "TIME",
+                    "type": "ordinal",
+                    "title": "Time (24h)",
+                    "axis": {"titleFontSize": 14, "labelFontSize": 12}
+                },
+                "y": {
+                    "aggregate":"count",
+                    "title": "Fatal accidents",
+                    "axis": {"titleFontSize": 14, "labelFontSize": 12}
+                }
+              }
+        }
+    ],
+    "config": {
+        "title": {
+          "fontSize": 16,
+          "fontWeight": 600
+        }
+    }
+  }

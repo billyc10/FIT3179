@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 300,
+    "width": 300,
+    "title": "Lives Lost Each Year",
+    "data": {"url": "../data/fatal_crashes_vic_by_year.csv"},
+    "encoding": {
+        "x": {
+            "timeUnit": "year", "field": "YEAR", "title": "Year", "axis": {"format": "%Y", "titleFontSize": 14, "labelFontSize": 12}},
+        "y": {"field":"FATALITIES", "type": "quantitative","title": "Total Lives Lost", "axis": {"titleFontSize": 14, "labelFontSize": 12}}
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "line",
+                "color": "#db646f"
+              },
+              "encoding": {
+                "x": {
+                    "timeUnit": "year", "field": "YEAR", "title": "Year", "axis": {"format": "%Y", "titleFontSize": 14, "labelFontSize": 12}},
+                "y": {"field":"FATALITIES", "type": "quantitative","title": "Total Lives Lost", "axis": {"titleFontSize": 14, "labelFontSize": 12}},
+                "tooltip": [
+                      {"timeUnit": "year", "field": "YEAR", "title": "Year"},
+                    {"field": "FATALITIES", "title": "Lives Lost"}
+                ]
+              }
+        },
+        {
+            "mark": {
+                "type": "point",
+                "color": "#99000d",
+                "fill": "#99000d"
+              },
+              "encoding": {
+                "tooltip": [
+                      {"timeUnit": "year", "field": "YEAR", "title": "Year"},
+                    {"field": "FATALITIES", "title": "Lives Lost"}
+                ]
+              }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align":"center",
+                "baseline": "middle",
+                "dy": -14,
+                "fontSize": 12
+              },
+              "encoding": {
+                "text": {"field":"FATALITIES", "type": "quantitative"},
+                "tooltip": [
+                      {"timeUnit": "year", "field": "YEAR", "title": "Year"},
+                    {"field": "FATALITIES", "title": "Lives Lost"}
+                ]
+              }
+        }
+    ],
+    "config": {
+        "title": {
+          "fontSize": 16,
+          "fontWeight": 600
+        }
+    }
+  }
