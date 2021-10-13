@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 150,
+    "width": 650,
+    "title": "Fatality Rate By Road User Type",
+    "data": {"url": "../data/fatal_crashes_vic_types.csv"},
+    "encoding": {
+        "x": {
+            "field": "FATALITIES_PERK",
+            "type": "quantitative",
+            "title": "Fatalities per 1000 accidents involving transport type",
+            "axis": {"titleFontSize": 14, "labelFontSize": 12}
+        },
+        "y": {
+            "field":"CATEGORY",
+            "type": "nominal",
+            "title": "Road User Type",
+            "axis": {"titleFontSize": 14, "labelFontSize": 12}
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "height": 20,
+                "color": "#fcbba1"
+              },
+              "encoding": {
+                "x": {
+                    "field": "FATALITIES_PERK",
+                    "type": "quantitative",
+                    "title": "Fatalities per 1000 accidents involving transport type"
+                },
+                "y": {
+                    "field":"CATEGORY",
+                    "type": "nominal",
+                    "title": "Road User Type"
+                },
+                "tooltip": [
+                   {"field": "CATEGORY", "title": "Road user type"},
+                   {"field": "FATALITIES", "title": "Total fatalities"},
+                   {"field": "FATALITIES_PERK", "title": "Fatalities per 1000 accidents", "format": ".0f"}
+                ]
+
+              }
+        }
+    ],
+    "config": {
+        "title": {
+          "fontSize": 20,
+          "fontWeight": 600
+        }
+    }
+  }

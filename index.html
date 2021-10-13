@@ -75,14 +75,28 @@
         </div>
 
         <div class="section horizontal">
-            <div class="halfbox" style="width:20%;margin:0 2% 0 4%">
+            <div class="halfbox" style="width:24%;margin:0 2% 0 0%">
                 <div class="text small paragraph halfbox">
                     The most fatal accidents occur at evening peak hour, between 3pm - 5pm. However, a significant portion of fatalities still occur after dark.
                     Although the roads are quiter, visibility is lower and hooning behaviour is more rampant.
                 </div>
             </div>
-            <div class="vis" id="fatalitiesTime" style="width:60%"></div>
+            <div class="vis" id="fatalitiesTime" style="width:53%"></div>
         </div>
+        
+        <div class="section vertical" style="align-items:center">
+            <div class="vis" id="fatalitiesVehicles"></div>
+            <div class="halfbox" style="width:50%">
+                <div class="text small paragraph subsection halfbox">
+                    Pedestrians and motorcyclists are the most at-risk road users.
+                    When a motorcycle is involved in an accident, the rider has over 3 times the chance
+                    of dying when compared to driving a vehicle. Despite not being driving a vehicle, 1 in 50 pedestrians struck by cars lose their lives,
+                    adding to the increasing figure in the road toll.
+                </div>
+            </div>
+        </div>
+
+        <div class="section"></div>
     </div>
     
 
@@ -91,11 +105,13 @@
         var spec2 = "specs/LGA_fatalities_map_normalised.json";
         var spec3 = "specs/fatalities_over_time.json";
         var spec4 = "specs/fatalities_time_of_day.json";
+        var spec5 = 'specs/fatalities_by_vehicles.json';
         
         vegaEmbed('#fatalitiesDotMap', spec1).then(function(result) {}).catch(console.error);
         vegaEmbed('#fatalitiesMap', spec2).then(function(result) {}).catch(console.error);
         vegaEmbed('#fatalitiesYears', spec3).then(function(result) {}).catch(console.error);
         vegaEmbed('#fatalitiesTime', spec4).then(function(result) {}).catch(console.error);
+        vegaEmbed('#fatalitiesVehicles', spec5).then(function(result) {}).catch(console.error);
     </script>
 </body>
 </html>

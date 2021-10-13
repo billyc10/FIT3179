@@ -13,7 +13,7 @@
         {
             "mark": {
                 "type": "line",
-                "color": "#db646f"
+                "color": "#fb6a4a"
               },
               "encoding": {
                 "x": {
@@ -57,7 +57,7 @@
     ],
     "config": {
         "title": {
-          "fontSize": 16,
+          "fontSize": 20,
           "fontWeight": 600
         }
     }

@@ -27,6 +27,7 @@
         {
             "mark": {
                 "type": "bar",
+                "width": {"band": 1.1},
                 "color": "#db646f"
               },
               "encoding": {
@@ -40,13 +41,46 @@
                     "aggregate":"count",
                     "title": "Fatal accidents",
                     "axis": {"titleFontSize": 14, "labelFontSize": 12}
-                }
+                },
+                "tooltip": [
+                    {"field": "TIME", "title": "Time"},
+                    {"aggregate": "count", "title": "Fatalities in this hour"}
+                ]
+
+              }
+        },
+        {
+            "transform": [
+                {"filter": "datum.TIME == \"16:00\" || datum.TIME == \"15:00\""}
+            ],
+            "mark": {
+                "type": "bar",
+                "width": {"band": 1.1},
+                "color": "#99000d"
+              },
+              "encoding": {
+                "x": {
+                    "field": "TIME",
+                    "type": "ordinal",
+                    "title": "Time (24h)",
+                    "axis": {"titleFontSize": 14, "labelFontSize": 12}
+                },
+                "y": {
+                    "aggregate":"count",
+                    "title": "Fatal accidents",
+                    "axis": {"titleFontSize": 14, "labelFontSize": 12}
+                },
+                "tooltip": [
+                    {"field": "TIME", "title": "Time"},
+                    {"aggregate": "count", "title": "Fatalities in this hour"}
+                ]
+
               }
         }
     ],
     "config": {
         "title": {
-          "fontSize": 16,
+          "fontSize": 20,
           "fontWeight": 600
         }
     }
