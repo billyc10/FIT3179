@@ -3,7 +3,7 @@
     "height": 150,
     "width": 650,
     "title": "Fatality Rate By Road User Type",
-    "data": {"url": "../data/fatal_crashes_vic_types.csv"},
+    "data": {"url": "https://billyc10.github.io/FIT3179/data/fatal_crashes_vic_types.csv"},
     "encoding": {
         "x": {
             "field": "FATALITIES_PERK",

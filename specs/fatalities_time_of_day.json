@@ -3,7 +3,7 @@
     "height": 300,
     "width": 500,
     "title": "Fatalities Across The Day",
-    "data": {"url": "../data/fatal_crashes_vic.csv"},
+    "data": {"url": "https://billyc10.github.io/FIT3179/data/fatal_crashes_vic.csv"},
     "encoding": {
         "x": {
             "field": "TIME",
