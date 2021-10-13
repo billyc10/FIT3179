@@ -9,7 +9,7 @@
             "field": "FATALITIES_PERK",
             "type": "quantitative",
             "title": "Fatalities per 1000 accidents involving transport type",
-            "axis": {"titleFontSize": 14, "labelFontSize": 12}
+            "axis": {"titleFontSize": 14, "labelFontSize": 14}
         },
         "y": {
             "field":"CATEGORY",
