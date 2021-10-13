@@ -38,7 +38,37 @@
                 },
                 "tooltip": [
                    {"field": "CATEGORY", "title": "Road user type"},
-                   {"field": "FATALITIES", "title": "Total fatalities"},
+                   {"field": "ACCIDENTS", "title": "Total accidents"},
+                   {"field": "FATALITIES", "title": "Fatalities"},
+                   {"field": "FATALITIES_PERK", "title": "Fatalities per 1000 accidents", "format": ".0f"}
+                ]
+
+              }
+        },
+        {
+            "transform": [
+                {"filter": "datum.FATALITIES_PERK > 10"}
+            ],
+            "mark": {
+                "type": "bar",
+                "height": 20,
+                "color": "#fb6a4a"
+              },
+              "encoding": {
+                "x": {
+                    "field": "FATALITIES_PERK",
+                    "type": "quantitative",
+                    "title": "Fatalities per 1000 accidents involving transport type"
+                },
+                "y": {
+                    "field":"CATEGORY",
+                    "type": "nominal",
+                    "title": "Road User Type"
+                },
+                "tooltip": [
+                   {"field": "CATEGORY", "title": "Road user type"},
+                   {"field": "ACCIDENTS", "title": "Total accidents"},
+                   {"field": "FATALITIES", "title": "Fatalities"},
                    {"field": "FATALITIES_PERK", "title": "Fatalities per 1000 accidents", "format": ".0f"}
                 ]
 
