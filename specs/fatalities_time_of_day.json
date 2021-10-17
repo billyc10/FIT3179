@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "height": 300,
-    "width": 500,
+    "width": 400,
     "title": "Fatalities Across The Day",
     "data": {"url": "https://billyc10.github.io/FIT3179/data/fatal_crashes_vic.csv"},
     "encoding": {

@@ -14,6 +14,9 @@
         "y": {
             "field":"CATEGORY",
             "type": "nominal",
+            "sort": [
+                "Driver", "Bicyclist", "Motorcyclist", "Pedestrian"
+            ],
             "title": "Road User Type",
             "axis": {"titleFontSize": 14, "labelFontSize": 12}
         }
@@ -23,7 +26,7 @@
             "mark": {
                 "type": "bar",
                 "height": 20,
-                "color": "#fcbba1"
+                "color": "#db646f"
               },
               "encoding": {
                 "x": {
@@ -52,7 +55,7 @@
             "mark": {
                 "type": "bar",
                 "height": 20,
-                "color": "#fb6a4a"
+                "color": "#99000d"
               },
               "encoding": {
                 "x": {

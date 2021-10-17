@@ -23,7 +23,7 @@
     <div class="main">
         <h1>Victorian Road Accidents - The Last 5 Years</h1>
         
-        <div class="vertical">
+        <div class="section vertical">
             <div class="horizontal" style="margin-bottom:20px">
                 <div class="vertical" style="width:20%">
                     <div class="text heading large"> 
@@ -41,53 +41,29 @@
             </div>
             <div class="text small" style>from July 2015 - June 2020 on Victorian roads</div>
 
-            <div class="section text small paragraph box">
+            <div class="subsection text small paragraph box">
                 Every year thousands of accidents occur on our roads, and hundreds lost their lives to tragic accidents.
                 In this series of visualisations we have a look into the statistics behind road accidents.
             </div>
         </div>
 
-        <div class="section map" id="fatalitiesDotMap"></div>
+        <div class="section"></div>
 
-        <div class="subsection text small paragraph box">
-            As expected, the majority of road fatalities occur in densely populated areas around metropolitan Melbourne.
-            This is true especially for pedestrian and cyclist fatalities, as urban regions tend to have a greater density of foot and cyclist traffic.
-            However, the map of fatal crashes below (normalised per 10,000 residents) reveals a somehwat surprising statistic:
-        </div>
+        <div class="section vertical">
+            <div class="map" id="fatalitiesDotMap"></div>
+            <div class="subsection text small paragraph box">
+                As expected, the majority of road fatalities occur in densely populated areas around metropolitan Melbourne.
+                This is true especially for pedestrian and cyclist fatalities, as urban regions tend to have a greater density of foot and cyclist traffic.
 
-        <div class="subsection map" id="fatalitiesMap"></div>
-
-        <div class="subsection text small paragraph box">
-            When we look at fatalities normalised by population, metropolitan Melbourne actually has the lowest road fatality rate.
-            Rural areas actually tend to be the more dangerous areas to drive in. This is likely due to the fact that despite its dense population,
-            Metro Melbourne has many built-up roads, with traffic lights and low speeds. Rural highways tend to have higher road speeds, narrower lanes, and
-            longer distances to travel that lead to fatigue.
-        </div>
-
-        <div class="section horizontal">
-            <div class="vis" id="fatalitiesYears" style="width:40%"></div>
-            <div class="halfbox" style="width:40%">
-                <div class="text small paragraph halfbox">
-                    Victoria's road toll had been on the decrease for 3 years in a row, hitting a record low of 159 in 2018 before spiking back up in 2019.
-                    Despite COVID-19 causing state-wide lockdowns for a majority of 2020, the total lives lost on our roads did not drop drastically.
-                </div>
+                <br><br> <i>* Click on the legend to filter the map by road user type</i>
             </div>
         </div>
 
-        <div class="section horizontal">
-            <div class="halfbox" style="width:24%;margin:0 2% 0 0%">
-                <div class="text small paragraph halfbox">
-                    The most fatal accidents occur at evening peak hour, between 3pm - 5pm. However, a significant portion of fatalities still occur after dark.
-                    Although the roads are quiter, visibility is lower and hooning behaviour is more rampant.
-                </div>
-            </div>
-            <div class="vis" id="fatalitiesTime" style="width:53%"></div>
-        </div>
-        
-        <div class="section vertical" style="align-items:center">
+        <div class="section vertical" style="align-items:center;background-color:#fee5d9">
             <div class="vis" id="fatalitiesVehicles"></div>
-            <div class="halfbox" style="width:50%">
-                <div class="text small paragraph subsection halfbox">
+            <div class="halfbox" style="width:100%">
+                <div class="subsection text small paragraph box">
+                    <div class="section text medium"> Not Just Cars </div>
                     Pedestrians and motorcyclists are the most at-risk road users.
                     When a motorcycle is involved in an accident, the rider has over 3 times the chance
                     of dying when compared to driving a vehicle. Despite not being driving a vehicle, 1 in 50 pedestrians struck by cars lose their lives,
@@ -96,7 +72,41 @@
             </div>
         </div>
 
-        <div class="section"></div>
+        <div class="section vertical">
+            <div class="map" id="fatalitiesMap"></div>
+            <div class="subsection text small paragraph box">
+                When we look at fatalities normalised by population, metropolitan Melbourne actually has the lowest road fatality rate.
+                Rural areas actually tend to be the more dangerous areas to drive in. This is likely due to the fact that despite its dense population,
+                Metro Melbourne has many built-up roads, with traffic lights and low speeds. Rural highways tend to have higher road speeds, narrower lanes, and
+                longer distances to travel that lead to fatigue.
+            </div>
+        </div>
+
+        <div class="section horizontal" style="background-color:#fee5d9">
+            <div class="halfbox" style="width:35%;margin:0 2% 0 0%">
+                <div class="text small paragraph halfbox">
+                    <div class="section text medium"> Dangerous At All Times </div>
+                    The most fatal accidents occur at evening peak hour, between 3pm - 5pm. However, a significant portion of fatalities still occur after dark.
+                    Although the roads are quiter, visibility is lower and hooning behaviour is more rampant.
+                </div>
+            </div>
+            <div class="vis" id="fatalitiesTime" style="width:45%"></div>
+        </div>
+
+        <div class="section horizontal">
+            <div class="vis" id="fatalitiesYears" style="width:40%"></div>
+            <div class="halfbox" style="width:40%">
+                <div class="text small paragraph halfbox">
+                    <div class="section text medium"> The Road Toward Zero </div>
+                    Victoria's road toll had been on the decrease for 3 years in a row, hitting a record low of 159 in 2018 before spiking back up in 2019.
+                    Despite COVID-19 causing state-wide lockdowns for a majority of 2020, the total lives lost on our roads did not drop drastically.
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" style="font-size:12px;text-align:center">
+            Visualisation by Billy Chen. All data publicly available from the <a href="https://www.tac.vic.gov.au/road-safety/statistics/lives-lost-year-to-date">Transport Accident Commission</a>
+        </div>
     </div>
     
 
